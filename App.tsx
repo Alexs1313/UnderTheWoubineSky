@@ -1,28 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { NavigationContainer } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
+import Woudbineskystcknav from './underthewoudbineskysrc/woudbineskynav/Woudbineskystcknav';
+import { WoudbineContext } from './underthewoudbineskysrc/woudbineskystrg/woudbinecntx';
+import Woudbineldr from './underthewoudbineskysrc/woudbineskycmpnts/Woudbineldr';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const App = () => {
+  const [isVisibleWdEntryScreen, setIsVisibleWdEntryScreen] = useState(false);
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisibleWdEntryScreen(true);
+    }, 6000);
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <WoudbineContext>
+        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineldr />}
+      </WoudbineContext>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
