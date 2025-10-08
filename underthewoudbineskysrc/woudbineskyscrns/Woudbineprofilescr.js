@@ -2,14 +2,12 @@ import { BlurView } from '@react-native-community/blur';
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import {
-  Alert,
   Dimensions,
   Image,
   ImageBackground,
   Modal,
   Platform,
   ScrollView,
-  Share,
   StyleSheet,
   Text,
   TextInput,
@@ -17,7 +15,6 @@ import {
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import LinearGradient from 'react-native-linear-gradient';
 import { launchImageLibrary } from 'react-native-image-picker';
 
 const { height } = Dimensions.get('window');
@@ -25,7 +22,6 @@ const { height } = Dimensions.get('window');
 const Woudbineprofilescr = () => {
   const navigation = useNavigation();
   const [showWoudbineMenu, setShowWoudbineMenu] = useState(false);
-
   const [woudbineName, setWoudbineName] = useState('');
   const [woudbineSurnameName, setWoudbineSurnameName] = useState('');
   const [woudbinePhoto, setWoudbinePhoto] = useState(null);
