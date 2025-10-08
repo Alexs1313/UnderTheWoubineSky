@@ -164,6 +164,18 @@ const Woudbineskyloclist = ({ selectedScreen }) => {
                   >
                     <Text style={styles.woudbinepopsectxt}>Information</Text>
                   </TouchableOpacity>
+                  {Platform.OS === 'ios' && (
+                    <TouchableOpacity
+                      style={{ marginTop: 19 }}
+                      activeOpacity={0.7}
+                      onPress={() => {
+                        navigation.navigate('Woudbineprofilescr');
+                        setShowWoudbineMenu(false);
+                      }}
+                    >
+                      <Text style={styles.woudbinepopsectxt}>Profile</Text>
+                    </TouchableOpacity>
+                  )}
                 </View>
               </Modal>
             )}

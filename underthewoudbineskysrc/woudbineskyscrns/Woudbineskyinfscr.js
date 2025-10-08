@@ -154,6 +154,19 @@ Travel with guide Celine and collect your own collection of stories under the St
                     />
                     <Text style={styles.woudbinepoptxt}>INFORMATION</Text>
                   </View>
+
+                  {Platform.OS === 'ios' && (
+                    <TouchableOpacity
+                      style={{ marginTop: 19 }}
+                      activeOpacity={0.7}
+                      onPress={() => {
+                        navigation.navigate('Woudbineprofilescr');
+                        setShowWoudbineMenu(false);
+                      }}
+                    >
+                      <Text style={styles.woudbinepopsectxt}>Profile</Text>
+                    </TouchableOpacity>
+                  )}
                 </View>
               </Modal>
             )}

@@ -8,6 +8,7 @@ import Woudbinesvdscr from '../woudbineskyscrns/Woudbinesvdscr';
 import Woudbinemapscr from '../woudbineskyscrns/Woudbinemapscr';
 import Woudbineskyinfscr from '../woudbineskyscrns/Woudbineskyinfscr';
 import Woudbinemarksscr from '../woudbineskyscrns/Woudbinemarksscr';
+import Woudbineprofilescr from '../woudbineskyscrns/Woudbineprofilescr';
 const Stack = createStackNavigator();
 
 const Woudbineskystcknav = () => {
@@ -22,6 +23,7 @@ const Woudbineskystcknav = () => {
       <Stack.Screen name="Woudbinemapscr" component={Woudbinemapscr} />
       <Stack.Screen name="Woudbineskyinfscr" component={Woudbineskyinfscr} />
       <Stack.Screen name="Woudbinemarksscr" component={Woudbinemarksscr} />
+      <Stack.Screen name="Woudbineprofilescr" component={Woudbineprofilescr} />
     </Stack.Navigator>
   );
 };
