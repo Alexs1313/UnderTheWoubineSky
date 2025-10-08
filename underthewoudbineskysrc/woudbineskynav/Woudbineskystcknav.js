@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 const Woudbineskystcknav = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Woudbineskyentrscr" component={Woudbineskyentrscr} />
+      <Stack.Screen name="Woubineskyentrscr" component={Woubineskyentrscr} />
       <Stack.Screen name="Woudbineskyhmscr" component={Woudbineskyhmscr} />
       <Stack.Screen name="Woudbineskyloclist" component={Woudbineskyloclist} />
       <Stack.Screen name="Woudbineskydetscr" component={Woudbineskydetscr} />
