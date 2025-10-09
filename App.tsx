@@ -16,7 +16,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <WoudbineContext>
-        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineldr />}
+        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineld />}
       </WoudbineContext>
     </NavigationContainer>
   );
