@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import Woudbineskystcknav from './underthewoudbineskysrc/woudbineskynav/Woudbineskystcknav';
-import { WoudbineContext } from './underthewoudbineskysrc/woudbineskystrg/woudbinecntx';
-import Woudbineldr from './underthewoudbineskysrc/woudbineskycmpnts/Woudbineldr';
+import Woudbineskystcknav from './UnderWoubineSkySrc/woudbineskynav/Woudbineskystcknav';
+import { WoudbineContext } from './UnderWoubineSkySrc/woudbineskystrg/woudbinecntx';
+import Woudbineldr from './UnderWoubineSkySrc/woudbineskycmpnts/Woudbineldr';
 
 const App = () => {
   const [isVisibleWdEntryScreen, setIsVisibleWdEntryScreen] = useState(false);
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <WoudbineContext>
-        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineld />}
+        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineldr />}
       </WoudbineContext>
     </NavigationContainer>
   );
