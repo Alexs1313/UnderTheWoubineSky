@@ -14,9 +14,9 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MapView, { Marker } from 'react-native-maps';
-import { useStore } from '../woudbineskystrg/woudbinecntx';
+import { useStore } from '../UnderTheSkyStore/underTheSkyContext';
 
-const Woudbinelistcarddet = ({ location }) => {
+const UnderTheSkyCardDetails = ({ location }) => {
   const [isOpenedMap, setIsOpenedMap] = useState(false);
   const [toggleWoudbineIcn, setToggleWoudbineIcn] = useState(false);
   const { saveWoudbineLocation, getWoudbineLocation, delWoudbineLocation } =
@@ -269,4 +269,4 @@ const styles = StyleSheet.create({
   woudbinegrd: { width: '100%', height: 170, position: 'absolute', top: 0 },
 });
 
-export default Woudbinelistcarddet;
+export default UnderTheSkyCardDetails;

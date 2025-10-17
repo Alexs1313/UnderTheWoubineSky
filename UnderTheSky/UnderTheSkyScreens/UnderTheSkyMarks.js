@@ -13,12 +13,12 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../woudbineskycnsts/woudbineachvs';
+import { achievementsList } from '../UnderTheSkyConsts/woudbineachvs';
 
 const ACHIEVEMENTS_STORAGE_KEY = '@achievements';
 const { height } = Dimensions.get('window');
 
-const Woudbinemarksscr = () => {
+const UnderTheSkyMarks = () => {
   const navigation = useNavigation();
   const [achievements, setAchievements] = useState([]);
 
@@ -249,4 +249,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbinemarksscr;
+export default UnderTheSkyMarks;

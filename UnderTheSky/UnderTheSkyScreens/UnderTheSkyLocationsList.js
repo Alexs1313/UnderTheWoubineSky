@@ -11,15 +11,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../woudbineskycnsts/woudbinelocs';
-import Woudbinelistcard from '../woudbineskycmpnts/Woudbinelistcard';
+import { woudbinelocs } from '../UnderTheSkyConsts/woudbinelocs';
+import UnderTheSkyListCard from '../UnderTheSkyComponents/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../woudbineskystrg/woudbinecntx';
+import { useStore } from '../UnderTheSkyStore/underTheSkyContext';
 import { BlurView } from '@react-native-community/blur';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');
 
-const Woudbineskyloclist = ({ selectedScreen }) => {
+const UnderTheSkyLocationsList = ({ selectedScreen }) => {
   const navigation = useNavigation();
   const { getWoudbineLocation, woudbineSavedList } = useStore();
   const [showWoudbineMenu, setShowWoudbineMenu] = React.useState(false);
@@ -158,7 +158,7 @@ const Woudbineskyloclist = ({ selectedScreen }) => {
                   <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => {
-                      navigation.navigate('Woudbineskyinfscr'),
+                      navigation.navigate('UnderTheSkyInfo'),
                         setShowWoudbineMenu(false);
                     }}
                   >
@@ -169,7 +169,7 @@ const Woudbineskyloclist = ({ selectedScreen }) => {
                       style={{ marginTop: 19 }}
                       activeOpacity={0.7}
                       onPress={() => {
-                        navigation.navigate('Woudbineprofilescr');
+                        navigation.navigate('UnderTheSkyProfile');
                         setShowWoudbineMenu(false);
                       }}
                     >
@@ -247,7 +247,7 @@ const Woudbineskyloclist = ({ selectedScreen }) => {
         )}
 
         {filteredPlaces.map((loc, idx) => (
-          <Woudbinelistcard
+          <UnderTheSkyListCard
             key={idx}
             location={loc}
             selectedScreen={selectedScreen}
@@ -328,4 +328,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbineskyloclist;
+export default UnderTheSkyLocationsList;

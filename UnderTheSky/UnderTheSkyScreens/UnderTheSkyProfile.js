@@ -19,7 +19,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 
 const { height } = Dimensions.get('window');
 
-const Woudbineprofilescr = () => {
+const UnderTheSkyProfile = () => {
   const navigation = useNavigation();
   const [showWoudbineMenu, setShowWoudbineMenu] = useState(false);
   const [woudbineName, setWoudbineName] = useState('');
@@ -208,7 +208,7 @@ const Woudbineprofilescr = () => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 onPress={() => {
-                  navigation.navigate('Woudbinesvdscr');
+                  navigation.navigate('UnderTheSkySaved');
                   setShowWoudbineMenu(false);
                 }}
               >
@@ -220,7 +220,7 @@ const Woudbineprofilescr = () => {
                   style={{ marginTop: 19 }}
                   activeOpacity={0.7}
                   onPress={() => {
-                    navigation.navigate('Woudbineskyinfscr');
+                    navigation.navigate('UnderTheSkyInfo');
                     setShowWoudbineMenu(false);
                   }}
                 >
@@ -423,4 +423,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbineprofilescr;
+export default UnderTheSkyProfile;

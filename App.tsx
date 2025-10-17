@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import Woudbineskystcknav from './UnderWoubineSkySrc/woudbineskynav/Woudbineskystcknav';
-import { WoudbineContext } from './UnderWoubineSkySrc/woudbineskystrg/woudbinecntx';
-import Woudbineldr from './UnderWoubineSkySrc/woudbineskycmpnts/Woudbineldr';
+import UnderTheSkyStack from './UnderTheSky/UnderTheSkyNavigation/UnderTheSkyStack';
+import { ContextProvider } from './UnderTheSky/UnderTheSkyStore/underTheSkyContext';
+import UnderTheSkyLoader from './UnderTheSky/UnderTheSkyComponents/UnderTheSkyLoader';
 
 const App = () => {
   const [isVisibleWdEntryScreen, setIsVisibleWdEntryScreen] = useState(false);
@@ -15,9 +15,9 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <WoudbineContext>
-        {isVisibleWdEntryScreen ? <Woudbineskystcknav /> : <Woudbineldr />}
-      </WoudbineContext>
+      <ContextProvider>
+        {isVisibleWdEntryScreen ? <UnderTheSkyStack /> : <UnderTheSkyLoader />}
+      </ContextProvider>
     </NavigationContainer>
   );
 };

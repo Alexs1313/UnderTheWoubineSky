@@ -1,6 +1,5 @@
-import { BlurView } from '@react-native-community/blur';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Alert,
   Dimensions,
@@ -15,23 +14,30 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { woudbinefcts } from '../UnderTheSkyConsts/woudbinefcts';
+import { BlurView } from '@react-native-community/blur';
+
 const { height } = Dimensions.get('window');
 
-const Woudbineskyinfscr = () => {
+const UnderTheSkyHome = () => {
   const [showWoudbineMenu, setShowWoudbineMenu] = React.useState(false);
   const navigation = useNavigation();
+  const [woudbineFact, setWoudbineFact] = useState(null);
 
-  const shareWoudbineInfo = async () => {
+  useEffect(() => {
+    getRandomWoudbineFact(woudbinefcts);
+  }, []);
+
+  const getRandomWoudbineFact = arr => {
+    const idx = Math.floor(Math.random() * arr.length);
+    setWoudbineFact(arr[idx]);
+  };
+
+  const shareWoudbineFact = async () => {
     try {
       await Share.share({
-        message:
-          Platform.OS === 'ios'
-            ? `“Under the Woubine Sky” introduces you to unique places in Canada that you won’t find in your usual guidebooks.
-Here you can save your favorite spots, learn interesting facts, and get marks for the locations you visit.
-Travel with guide Celine and collect your own collection of stories under the Woubine sky.`
-            : `“Under the Star Sky” introduces you to unique places in Canada that you won’t find in your usual guidebooks. 
-Here you can save your favorite spots, learn interesting facts, and get marks for the locations you visit.
-Travel with guide Celine and collect your own collection of stories under the Star sky.`,
+        message: woudbineFact,
       });
     } catch (error) {
       Alert.alert(error.message);
@@ -69,9 +75,23 @@ Travel with guide Celine and collect your own collection of stories under the St
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.woudbinewrppr}>
-          <Text style={styles.woudbinelbltxt}>Information</Text>
+          {Platform.OS === 'ios' ? (
+            <Image source={require('../../assets/images/woudbinehmlogo.png')} />
+          ) : (
+            <Image
+              source={require('../../assets/images/woubineandrlogo.png')}
+              style={{ width: 73, height: 73, borderRadius: 22 }}
+            />
+          )}
+          <Text style={styles.woudbinelbltxt}>Hello, traveler!</Text>
 
           <View style={{ flexDirection: 'row', gap: 12 }}>
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('UnderTheSkyMarks')}
+            >
+              <Image source={require('../../assets/images/woudbineic.png')} />
+            </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => setShowWoudbineMenu(!showWoudbineMenu)}
@@ -84,11 +104,12 @@ Travel with guide Celine and collect your own collection of stories under the St
                 transparent={true}
                 animationType="fade"
                 visible={showWoudbineMenu}
+                onRequestClose={() => setShowWoudbineMenu(false)}
               >
                 <View
                   style={{
                     position: 'absolute',
-                    top: height * 0.085,
+                    top: height * 0.09,
                     width: 200,
                     padding: 16,
                     backgroundColor: '#101010',
@@ -118,49 +139,49 @@ Travel with guide Celine and collect your own collection of stories under the St
                     </TouchableOpacity>
                   </View>
 
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      gap: 8,
+                      alignItems: 'center',
+                      marginBottom: 20,
+                    }}
+                  >
+                    <Image
+                      source={require('../../assets/images/woudbineselscr.png')}
+                    />
+                    <Text style={styles.woudbinepoptxt}>HOME</Text>
+                  </View>
                   <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => {
-                      navigation.popToTop();
+                      navigation.navigate('UnderTheSkySaved');
                       setShowWoudbineMenu(false);
                     }}
                   >
                     <Text
                       style={[styles.woudbinepopsectxt, { marginBottom: 19 }]}
                     >
-                      Home
+                      Saved places
                     </Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => {
-                      navigation.navigate('Woudbinesvdscr');
+                      navigation.navigate('UnderTheSkyInfo');
                       setShowWoudbineMenu(false);
                     }}
                   >
-                    <Text style={styles.woudbinepopsectxt}>Saved places</Text>
+                    <Text style={styles.woudbinepopsectxt}>Information</Text>
                   </TouchableOpacity>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      gap: 8,
-                      alignItems: 'center',
-                      marginTop: 20,
-                    }}
-                  >
-                    <Image
-                      source={require('../../assets/images/woudbineselscr.png')}
-                    />
-                    <Text style={styles.woudbinepoptxt}>INFORMATION</Text>
-                  </View>
 
                   {Platform.OS === 'ios' && (
                     <TouchableOpacity
                       style={{ marginTop: 19 }}
                       activeOpacity={0.7}
                       onPress={() => {
-                        navigation.navigate('Woudbineprofilescr');
+                        navigation.navigate('UnderTheSkyProfile');
                         setShowWoudbineMenu(false);
                       }}
                     >
@@ -172,48 +193,85 @@ Travel with guide Celine and collect your own collection of stories under the St
             )}
           </View>
         </View>
-        <View style={{ alignItems: 'center', marginBottom: 20 }}>
-          {Platform.OS === 'ios' ? (
-            <Image source={require('../../assets/images/woudbineinflog.png')} />
-          ) : (
-            <Image
-              source={require('../../assets/images/woubineandrlogo.png')}
-              style={{
-                width: 350,
-                height: 350,
-                borderTopLeftRadius: 52,
-                borderTopRightRadius: 52,
-              }}
-            />
-          )}
-        </View>
 
-        {Platform.OS === 'ios' ? (
-          <Text style={[styles.woudbinesectxt, { marginBottom: 20 }]}>
-            “Under the Woubine Sky” introduces you to unique places in Canada
-            that you won’t find in your usual guidebooks. Here you can save your
-            favorite spots, learn interesting facts, and get marks for the
-            locations you visit. Travel with guide Celine and collect your own
-            collection of stories under the Woubine sky.
-          </Text>
-        ) : (
-          <Text style={[styles.woudbinesectxt, { marginBottom: 20 }]}>
-            “Under the Star Sky” introduces you to unique places in Canada that
-            you won’t find in your usual guidebooks. Here you can save your
-            favorite spots, learn interesting facts, and get marks for the
-            locations you visit. Travel with guide Celine and collect your own
-            collection of stories under the Star sky.
-          </Text>
-        )}
-        <TouchableOpacity activeOpacity={0.8} onPress={shareWoudbineInfo}>
-          <ImageBackground
-            source={require('../../assets/images/woudbinebtshr.png')}
-            style={styles.woudbinwrp}
+        <LinearGradient
+          colors={['#E11712', '#7B0D0A']}
+          style={{
+            marginBottom: 32,
+            width: '100%',
+            borderRadius: 12,
+          }}
+        >
+          <View style={{ paddingHorizontal: 16, padding: 20 }}>
+            <Text style={styles.woudbinefactttl}>Daily facts:</Text>
+            <Text style={styles.woudbinefacttxt}>{woudbineFact}</Text>
+
+            <TouchableOpacity
+              style={{ left: 10 }}
+              activeOpacity={0.7}
+              onPress={shareWoudbineFact}
+            >
+              <Image source={require('../../assets/images/woudbineshr.png')} />
+            </TouchableOpacity>
+
+            <Image
+              source={require('../../assets/images/woudbinefctim.png')}
+              style={{ position: 'absolute', bottom: 0, right: 0 }}
+            />
+          </View>
+        </LinearGradient>
+
+        <ImageBackground
+          source={require('../../assets/images/woudbinemp.png')}
+          style={styles.woudbinewlccont}
+        >
+          <LinearGradient
+            colors={['#00000000', '#000000']}
+            style={{
+              flex: 1,
+              width: '100%',
+              justifyContent: 'flex-end',
+            }}
           >
-            <Image source={require('../../assets/images/woudbineshric.png')} />
-            <Text style={styles.woudbinebtntxt}>Share</Text>
-          </ImageBackground>
-        </TouchableOpacity>
+            <View style={styles.woudbinecntwrppr}>
+              <Text style={styles.woudbinelbltxt}>Interactive map</Text>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('UnderTheSkyMap')}
+              >
+                <Image
+                  source={require('../../assets/images/woudbineopn.png')}
+                />
+              </TouchableOpacity>
+            </View>
+          </LinearGradient>
+        </ImageBackground>
+
+        <ImageBackground
+          source={require('../../assets/images/woudbineplc.png')}
+          style={[styles.woudbinewlccont, { height: 227 }]}
+        >
+          <LinearGradient
+            colors={['#00000000', '#000000']}
+            style={{
+              flex: 1,
+              width: '100%',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <View style={styles.woudbinecntwrppr}>
+              <Text style={styles.woudbinelbltxt}>Popular places</Text>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('UnderTheSkyPopular')}
+              >
+                <Image
+                  source={require('../../assets/images/woudbineopn.png')}
+                />
+              </TouchableOpacity>
+            </View>
+          </LinearGradient>
+        </ImageBackground>
       </ScrollView>
     </View>
   );
@@ -223,33 +281,25 @@ const styles = StyleSheet.create({
   woudbinecnt: { flex: 1, backgroundColor: '#020302' },
   woudbinebtntxt: {
     color: '#FFFFFF',
-    fontSize: 16,
-    fontFamily: 'Raleway-SemiBold',
+    fontSize: 20,
+    fontFamily: 'Raleway-Bold',
   },
   woudbinscrollcnt: {
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
     backgroundColor: '#020302',
-    paddingBottom: 30,
   },
   woudbinelbltxt: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 16,
     fontFamily: 'Raleway-Black',
   },
   woudbinesectxt: {
     color: '#FFFFFF',
-    fontSize: 16,
-    fontFamily: 'Raleway-Regular',
-  },
-  woudbinwrp: {
-    width: 148,
-    height: 48,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 6,
+    fontSize: 17,
+    fontFamily: 'Raleway-SemiBold',
+    textAlign: 'center',
   },
   woudbinewlccont: {
     width: '100%',
@@ -285,7 +335,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 11,
     fontFamily: 'Raleway-Regular',
-    width: '70%',
+    width: '65%',
     marginBottom: 30,
   },
   woudbinepoptxt: {
@@ -300,4 +350,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbineskyinfscr;
+export default UnderTheSkyHome;

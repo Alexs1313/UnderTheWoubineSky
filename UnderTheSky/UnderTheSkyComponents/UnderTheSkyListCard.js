@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Woudbinelistcard = ({ location, selectedScreen }) => {
+const UnderTheSkyListCard = ({ location, selectedScreen }) => {
   const navigation = useNavigation();
 
   return (
@@ -45,7 +45,7 @@ const Woudbinelistcard = ({ location, selectedScreen }) => {
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => {
-                navigation.navigate('Woudbineskydetscr', {
+                navigation.navigate('UnderTheSkyDetails', {
                   location,
                   selectedScreen,
                 });
@@ -98,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbinelistcard;
+export default UnderTheSkyListCard;

@@ -10,17 +10,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Woudbinelistcarddet from '../woudbineskycmpnts/Woudbinelistcarddet';
+import UnderTheSkyCardDetails from '../UnderTheSkyComponents/UnderTheSkyCardDetails';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../woudbineskycnsts/woudbineachvs';
+import { achievementsList } from '../UnderTheSkyConsts/woudbineachvs';
 import LinearGradient from 'react-native-linear-gradient';
 
 const VISITED_STORAGE_KEY = '@visited_places';
 const ACHIEVEMENTS_STORAGE_KEY = '@achievements';
 const { height } = Dimensions.get('window');
 
-const Woudbineskydetscr = ({ route }) => {
+const UnderTheSkyDetails = ({ route }) => {
   const { location } = route.params;
   const { selectedScreen } = route.params;
   const navigation = useNavigation();
@@ -184,7 +184,7 @@ const Woudbineskydetscr = ({ route }) => {
           </Animated.View>
         )}
 
-        <Woudbinelistcarddet
+        <UnderTheSkyCardDetails
           location={location}
           showWoudbinePopUp={showWoudbinePopUp}
         />
@@ -239,4 +239,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbineskydetscr;
+export default UnderTheSkyDetails;

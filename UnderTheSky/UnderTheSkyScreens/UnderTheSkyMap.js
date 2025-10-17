@@ -9,15 +9,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../woudbineskycnsts/woudbinelocs';
-import Woudbinelistcard from '../woudbineskycmpnts/Woudbinelistcard';
+import { woudbinelocs } from '../UnderTheSkyConsts/woudbinelocs';
+import Woudbinelistcard from '../UnderTheSkyComponents/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../woudbineskystrg/woudbinecntx';
+import { useStore } from '../UnderTheSkyStore/underTheSkyContext';
 import MapView, { Marker } from 'react-native-maps';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');
 
-const Woudbinemapscr = () => {
+const UnderTheSkyMap = () => {
   const navigation = useNavigation();
   const { getWoudbineLocation } = useStore();
   const [isVisibleCard, setIsVisibleCard] = useState(false);
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Woudbinemapscr;
+export default UnderTheSkyMap;
