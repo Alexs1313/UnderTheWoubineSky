@@ -15,8 +15,8 @@ const UnderTheSkyStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
-        name="UnderTheSkyOnboardig"
-        component={UnderTheSkyOnboardin}
+        name="UnderTheSkyOnboarding"
+        component={UnderTheSkyOnboarding}
       />
       <Stack.Screen name="UnderTheSkyHome" component={UnderTheSkyHome} />
       <Stack.Screen
