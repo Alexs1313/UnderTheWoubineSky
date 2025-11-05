@@ -1,17 +1,17 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import UnderTheSkyOnboarding from '../UnderTheSkyScreens/UnderTheSkyOnboarding';
-import UnderTheSkyHome from '../UnderTheSkyScreens/UnderTheSkyHome';
-import UnderTheSkyLocationsList from '../UnderTheSkyScreens/UnderTheSkyLocationsList';
-import UnderTheSkyDetails from '../UnderTheSkyScreens/UnderTheSkyDetails';
-import UnderTheSkyPopular from '../UnderTheSkyScreens/UnderTheSkyPopular';
-import UnderTheSkySaved from '../UnderTheSkyScreens/UnderTheSkySaved';
-import UnderTheSkyMap from '../UnderTheSkyScreens/UnderTheSkyMap';
-import UnderTheSkyInfo from '../UnderTheSkyScreens/UnderTheSkyInfo';
-import UnderTheSkyMarks from '../UnderTheSkyScreens/UnderTheSkyMarks';
-import UnderTheSkyProfile from '../UnderTheSkyScreens/UnderTheSkyProfile';
+import UnderTheSkyOnboarding from '../underskys/UnderTheSkyOnboarding';
+import UnderTheSkyHome from '../underskys/UnderTheSkyHome';
+import UnderTheSkyLocationsList from '../underskys/UnderTheSkyLocationsList';
+import UnderTheSkyDetails from '../underskys/UnderTheSkyDetails';
+import UnderTheSkyPopular from '../underskys/UnderTheSkyPopular';
+import UnderTheSkySaved from '../underskys/UnderTheSkySaved';
+import UnderTheSkyMap from '../underskys/UnderTheSkyMap';
+import UnderTheSkyInfo from '../underskys/UnderTheSkyInfo';
+import UnderTheSkyMarks from '../underskys/UnderTheSkyMarks';
+import UnderTheSkyProfile from '../underskys/UnderTheSkyProfile';
 const Stack = createStackNavigator();
 
-const UnderTheSkyStack = () => {
+const Underskyst = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
@@ -34,4 +34,4 @@ const UnderTheSkyStack = () => {
   );
 };
 
-export default UnderTheSkyStack;
+export default Underskyst;

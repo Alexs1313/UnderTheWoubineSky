@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-const UnderTheSkyLoader = () => {
+const Underskyld = () => {
   const loaderHtml = `
   <!DOCTYPE html>
   <html lang="en">
@@ -157,4 +157,4 @@ const UnderTheSkyLoader = () => {
   );
 };
 
-export default UnderTheSkyLoader;
+export default Underskyld;

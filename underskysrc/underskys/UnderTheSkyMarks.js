@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../UnderTheSkyConsts/woudbineachvs';
+import { achievementsList } from '../underskyd/woudbineachvs';
 
 const ACHIEVEMENTS_STORAGE_KEY = '@achievements';
 const { height } = Dimensions.get('window');
