@@ -16,7 +16,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <ContextContainer>
-        {!isLoading ? <NavUnderTheWoubineSky /> : <LoaderUnderTheWoubineSky />}
+        {!isLoading ? <NavUnderTheWoubineSky /> : <LoaderUnderTheWoubineSk />}
       </ContextContainer>
     </NavigationContainer>
   );

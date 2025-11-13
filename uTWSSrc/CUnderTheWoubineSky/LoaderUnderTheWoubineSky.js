@@ -142,7 +142,7 @@ const LoaderUnderTheWoubineSky = () => {
 
   return (
     <ImageBackground
-      source={require('../../assets/images/woudbineonb.png')}
+      source={require('../../assets/images/woudbineonbg.png')}
       style={{
         flex: 1,
       }}
