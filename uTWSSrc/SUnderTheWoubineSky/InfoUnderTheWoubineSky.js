@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyInfo = () => {
+const InfoUnderTheWoubineSky = () => {
   const [showWoudbineMenu, setShowWoudbineMenu] = React.useState(false);
   const navigation = useNavigation();
 
@@ -39,7 +39,8 @@ Travel with guide Celine and collect your own collection of stories under the St
   };
 
   return (
-    <View
+    <ImageBackground
+      source={require('../../assets/images/woudbineonbg.png')}
       style={[
         styles.woudbinecnt,
         showWoudbineMenu &&
@@ -135,7 +136,7 @@ Travel with guide Celine and collect your own collection of stories under the St
                   <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => {
-                      navigation.navigate('UnderTheSkySaved');
+                      navigation.navigate('SavedUnderTheWoubineSky');
                       setShowWoudbineMenu(false);
                     }}
                   >
@@ -160,7 +161,7 @@ Travel with guide Celine and collect your own collection of stories under the St
                       style={{ marginTop: 19 }}
                       activeOpacity={0.7}
                       onPress={() => {
-                        navigation.navigate('UnderTheSkyProfile');
+                        navigation.navigate('ProfileUnderTheWoubineSky');
                         setShowWoudbineMenu(false);
                       }}
                     >
@@ -215,12 +216,12 @@ Travel with guide Celine and collect your own collection of stories under the St
           </ImageBackground>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  woudbinecnt: { flex: 1, backgroundColor: '#020302' },
+  woudbinecnt: { flex: 1 },
   woudbinebtntxt: {
     color: '#FFFFFF',
     fontSize: 16,
@@ -230,7 +231,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
-    backgroundColor: '#020302',
     paddingBottom: 30,
   },
   woudbinelbltxt: {
@@ -300,4 +300,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyInfo;
+export default InfoUnderTheWoubineSky;

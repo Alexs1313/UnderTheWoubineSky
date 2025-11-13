@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react';
 
 export const StoreContext = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const ContextContainer = ({ children }) => {
   const [woudbineSavedList, setWoudbineSavedList] = useState([]);
 
   const saveWoudbineLocation = async location => {

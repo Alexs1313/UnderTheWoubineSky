@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import {
   Dimensions,
   Image,
+  ImageBackground,
   Platform,
   ScrollView,
   StyleSheet,
@@ -9,15 +10,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../underskyd/woudbinelocs';
-import Woudbinelistcard from '../underskyc/UnderTheSkyListCard';
+import { woudbinelocs } from '../DUnderTheWoubineSky/woudbinelocs';
+import Woudbinelistcard from '../CUnderTheWoubineSky/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../underskyst/underTheSkyContext';
+import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
 import MapView, { Marker } from 'react-native-maps';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyMap = () => {
+const MapUnderTheWoubineSky = () => {
   const navigation = useNavigation();
   const { getWoudbineLocation } = useStore();
   const [isVisibleCard, setIsVisibleCard] = useState(false);
@@ -30,7 +31,10 @@ const UnderTheSkyMap = () => {
   );
 
   return (
-    <View style={styles.woudbinecnt}>
+    <ImageBackground
+      source={require('../../assets/images/woudbineonbg.png')}
+      style={styles.woudbinecnt}
+    >
       <ScrollView
         contentContainerStyle={styles.woudbinscrollcnt}
         showsVerticalScrollIndicator={false}
@@ -49,7 +53,6 @@ const UnderTheSkyMap = () => {
         <View style={[styles.mapContainer]}>
           <MapView
             userInterfaceStyle="dark"
-            mapType="satellite"
             style={{ flex: 1 }}
             provider={Platform.OS === 'ios' ? 'google' : undefined}
             onPress={() => {
@@ -121,12 +124,12 @@ const UnderTheSkyMap = () => {
           )}
         </View>
       </ScrollView>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  woudbinecnt: { flex: 1, backgroundColor: '#020302' },
+  woudbinecnt: { flex: 1 },
   woudbineinpt: {
     backgroundColor: '#1E1E1E',
     borderRadius: 12,
@@ -142,7 +145,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
-    backgroundColor: '#020302',
   },
   woudbinelbltxt: {
     color: '#fff',
@@ -182,4 +184,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyMap;
+export default MapUnderTheWoubineSky;

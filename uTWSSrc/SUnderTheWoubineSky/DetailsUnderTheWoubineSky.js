@@ -10,17 +10,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import UnderTheSkyCardDetails from '../underskyc/UnderTheSkyCardDetails';
+import UnderTheSkyCardDetails from '../CUnderTheWoubineSky/UnderTheSkyCardDetails';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../underskyd/woudbineachvs';
+import { achievementsList } from '../DUnderTheWoubineSky/woudbineachvs';
 import LinearGradient from 'react-native-linear-gradient';
 
 const VISITED_STORAGE_KEY = '@visited_places';
 const ACHIEVEMENTS_STORAGE_KEY = '@achievements';
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyDetails = ({ route }) => {
+const DetailsUnderTheWoubineSky = ({ route }) => {
   const { location } = route.params;
   const { selectedScreen } = route.params;
   const navigation = useNavigation();
@@ -239,4 +239,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyDetails;
+export default DetailsUnderTheWoubineSky;

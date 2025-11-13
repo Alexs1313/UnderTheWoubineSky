@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ImageBackground } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-const Underskyld = () => {
+const LoaderUnderTheWoubineSky = () => {
   const loaderHtml = `
   <!DOCTYPE html>
   <html lang="en">
@@ -141,10 +141,10 @@ const Underskyld = () => {
   `;
 
   return (
-    <View
+    <ImageBackground
+      source={require('../../assets/images/woudbineonb.png')}
       style={{
         flex: 1,
-        backgroundColor: '#020302',
       }}
     >
       <WebView
@@ -153,8 +153,8 @@ const Underskyld = () => {
         style={{ backgroundColor: 'transparent' }}
         scrollEnabled={false}
       />
-    </View>
+    </ImageBackground>
   );
 };
 
-export default Underskyld;
+export default LoaderUnderTheWoubineSky;

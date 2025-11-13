@@ -4,6 +4,7 @@ import {
   Alert,
   Dimensions,
   Image,
+  ImageBackground,
   ScrollView,
   Share,
   StyleSheet,
@@ -13,12 +14,12 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../underskyd/woudbineachvs';
+import { achievementsList } from '../DUnderTheWoubineSky/woudbineachvs';
 
 const ACHIEVEMENTS_STORAGE_KEY = '@achievements';
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyMarks = () => {
+const MarksUnderTheWoubineSky = () => {
   const navigation = useNavigation();
   const [achievements, setAchievements] = useState([]);
 
@@ -48,7 +49,10 @@ const UnderTheSkyMarks = () => {
   };
 
   return (
-    <View style={styles.woudbinecnt}>
+    <ImageBackground
+      source={require('../../assets/images/woudbineonbg.png')}
+      style={styles.woudbinecnt}
+    >
       <ScrollView
         contentContainerStyle={styles.woudbinscrollcnt}
         showsVerticalScrollIndicator={false}
@@ -124,12 +128,12 @@ const UnderTheSkyMarks = () => {
           );
         })}
       </ScrollView>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  woudbinecnt: { flex: 1, backgroundColor: '#020302' },
+  woudbinecnt: { flex: 1 },
   woudbinebtntxt: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -139,7 +143,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
-    backgroundColor: '#020302',
   },
   woudbinelbltxt: {
     color: '#fff',
@@ -249,4 +252,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyMarks;
+export default MarksUnderTheWoubineSky;

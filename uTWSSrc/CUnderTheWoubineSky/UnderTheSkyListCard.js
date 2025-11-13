@@ -45,7 +45,7 @@ const UnderTheSkyListCard = ({ location, selectedScreen }) => {
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={() => {
-                navigation.navigate('UnderTheSkyDetails', {
+                navigation.navigate('DetailsUnderTheWoubineSky', {
                   location,
                   selectedScreen,
                 });

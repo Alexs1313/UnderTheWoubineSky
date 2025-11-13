@@ -13,7 +13,7 @@ import {
   View,
 } from 'react-native';
 
-const UnderTheSkyOnboarding = () => {
+const WelcomeUnderTheWoubineSky = () => {
   const [currWoudbineIdx, setCurrWoudbineIdx] = React.useState(0);
   const navigation = useNavigation();
   const topAnim = useRef(new Animated.Value(-100)).current;
@@ -146,7 +146,7 @@ const UnderTheSkyOnboarding = () => {
               if (currWoudbineIdx < 2) {
                 setCurrWoudbineIdx(currWoudbineIdx + 1);
               } else {
-                navigation.replace('UnderTheSkyHome');
+                navigation.replace('HomeUnderTheWoubineSky');
               }
             }}
           >
@@ -204,4 +204,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyOnboarding;
+export default WelcomeUnderTheWoubineSky;

@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import {
   Dimensions,
   Image,
+  ImageBackground,
   Modal,
   Platform,
   ScrollView,
@@ -11,15 +12,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../underskyd/woudbinelocs';
-import UnderTheSkyListCard from '../underskyc/UnderTheSkyListCard';
+import { woudbinelocs } from '../DUnderTheWoubineSky/woudbinelocs';
+import UnderTheSkyListCard from '../CUnderTheWoubineSky/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../underskyst/underTheSkyContext';
+import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
 import { BlurView } from '@react-native-community/blur';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyLocationsList = ({ selectedScreen }) => {
+const LocationsListUnderTheWoubineSky = ({ selectedScreen }) => {
   const navigation = useNavigation();
   const { getWoudbineLocation, woudbineSavedList } = useStore();
   const [showWoudbineMenu, setShowWoudbineMenu] = React.useState(false);
@@ -46,7 +47,8 @@ const UnderTheSkyLocationsList = ({ selectedScreen }) => {
   }, [woudbineInptVavue, placeslist]);
 
   return (
-    <View
+    <ImageBackground
+      source={require('../../assets/images/woudbineonbg.png')}
       style={[
         styles.woudbinecnt,
         showWoudbineMenu &&
@@ -158,7 +160,7 @@ const UnderTheSkyLocationsList = ({ selectedScreen }) => {
                   <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => {
-                      navigation.navigate('UnderTheSkyInfo'),
+                      navigation.navigate('InfoUnderTheWoubineSky'),
                         setShowWoudbineMenu(false);
                     }}
                   >
@@ -169,7 +171,7 @@ const UnderTheSkyLocationsList = ({ selectedScreen }) => {
                       style={{ marginTop: 19 }}
                       activeOpacity={0.7}
                       onPress={() => {
-                        navigation.navigate('UnderTheSkyProfile');
+                        navigation.navigate('ProfileUnderTheWoubineSky');
                         setShowWoudbineMenu(false);
                       }}
                     >
@@ -233,7 +235,9 @@ const UnderTheSkyLocationsList = ({ selectedScreen }) => {
               <TouchableOpacity
                 style={styles.woudbineshrbtn}
                 activeOpacity={0.7}
-                onPress={() => navigation.navigate('Woudbinepopplcsscr')}
+                onPress={() =>
+                  navigation.navigate('LocationsListUnderTheWoubineSky')
+                }
               >
                 <Text style={styles.woudbineshrbtntxt}>Open places</Text>
               </TouchableOpacity>
@@ -254,12 +258,12 @@ const UnderTheSkyLocationsList = ({ selectedScreen }) => {
           />
         ))}
       </ScrollView>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  woudbinecnt: { flex: 1, backgroundColor: '#020302' },
+  woudbinecnt: { flex: 1 },
   woudbineinpt: {
     backgroundColor: '#1E1E1E',
     borderRadius: 12,
@@ -275,7 +279,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
-    backgroundColor: '#020302',
   },
   woudbinelbltxt: {
     color: '#fff',
@@ -328,4 +331,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyLocationsList;
+export default LocationsListUnderTheWoubineSky;

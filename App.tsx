@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import { ContextProvider } from './underskysrc/underskyst/underTheSkyContext';
-import Underskyst from './underskysrc/underskyn/Underskyst';
-import Underskyld from './underskysrc/underskyc/Underskyld';
+import { ContextContainer } from './uTWSSrc/STUnderTheWoubineSky/underTheSkyContext';
+import NavUnderTheWoubineSky from './uTWSSrc/NUnderTheWoubineSky/NavUnderTheWoubineSky';
+import LoaderUnderTheWoubineSky from './uTWSSrc/CUnderTheWoubineSky/LoaderUnderTheWoubineSky';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,9 +15,9 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <ContextProvider>
-        {!isLoading ? <Underskys /> : <Underskyld />}
-      </ContextProvider>
+      <ContextContainer>
+        {!isLoading ? <NavUnderTheWoubineSky /> : <LoaderUnderTheWoubineSky />}
+      </ContextContainer>
     </NavigationContainer>
   );
 };

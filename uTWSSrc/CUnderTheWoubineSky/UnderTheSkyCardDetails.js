@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MapView, { Marker } from 'react-native-maps';
-import { useStore } from '../underskyst/underTheSkyContext';
+import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
 
 const UnderTheSkyCardDetails = ({ location }) => {
   const [isOpenedMap, setIsOpenedMap] = useState(false);
@@ -115,7 +115,6 @@ ${location.woudbinedescr}
             userInterfaceStyle="dark"
             style={{ flex: 1 }}
             provider={Platform.OS === 'ios' ? 'google' : undefined}
-            mapType="satellite"
             initialRegion={{
               latitude: location.woudbinelat,
               longitude: location.woudbinelon,

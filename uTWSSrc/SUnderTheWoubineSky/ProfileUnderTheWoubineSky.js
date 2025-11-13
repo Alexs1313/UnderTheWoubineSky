@@ -19,7 +19,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 
 const { height } = Dimensions.get('window');
 
-const UnderTheSkyProfile = () => {
+const ProfileUnderTheWoubineSky = () => {
   const navigation = useNavigation();
   const [showWoudbineMenu, setShowWoudbineMenu] = useState(false);
   const [woudbineName, setWoudbineName] = useState('');
@@ -81,7 +81,8 @@ const UnderTheSkyProfile = () => {
   };
 
   return (
-    <View
+    <ImageBackground
+      source={require('../../assets/images/woudbineonbg.png')}
       style={[
         styles.woudbinecnt,
         showWoudbineMenu &&
@@ -208,7 +209,7 @@ const UnderTheSkyProfile = () => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 onPress={() => {
-                  navigation.navigate('UnderTheSkySaved');
+                  navigation.navigate('SavedUnderTheWoubineSky');
                   setShowWoudbineMenu(false);
                 }}
               >
@@ -220,7 +221,7 @@ const UnderTheSkyProfile = () => {
                   style={{ marginTop: 19 }}
                   activeOpacity={0.7}
                   onPress={() => {
-                    navigation.navigate('UnderTheSkyInfo');
+                    navigation.navigate('InfoUnderTheWoubineSky');
                     setShowWoudbineMenu(false);
                   }}
                 >
@@ -307,12 +308,12 @@ const UnderTheSkyProfile = () => {
           </View>
         )}
       </ScrollView>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  woudbinecnt: { flex: 1, backgroundColor: '#020302' },
+  woudbinecnt: { flex: 1 },
   woudbinelbltxt: {
     color: '#fff',
     fontSize: 24,
@@ -352,7 +353,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: height * 0.088,
     paddingHorizontal: 16,
-    backgroundColor: '#020302',
     paddingBottom: 30,
   },
   woudbineinpt: {
@@ -423,4 +423,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderTheSkyProfile;
+export default ProfileUnderTheWoubineSky;
