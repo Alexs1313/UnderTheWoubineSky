@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MapView, { Marker } from 'react-native-maps';
-import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
+import { useStore } from '../UnderTheWoubineSkyStore/underTheSkyContext';
 
 const UnderTheSkyCardDetails = ({ location }) => {
   const [isOpenedMap, setIsOpenedMap] = useState(false);

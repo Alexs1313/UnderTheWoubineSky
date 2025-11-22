@@ -12,10 +12,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../DUnderTheWoubineSky/woudbinelocs';
-import UnderTheSkyListCard from '../CUnderTheWoubineSky/UnderTheSkyListCard';
+import { woudbinelocs } from '../UnderTheWoubineSkyData/woudbinelocs';
+import UnderTheSkyListCard from '../UnderTheWoubineSkyComponents/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
+import { useStore } from '../UnderTheWoubineSkyStore/underTheSkyContext';
 import { BlurView } from '@react-native-community/blur';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');

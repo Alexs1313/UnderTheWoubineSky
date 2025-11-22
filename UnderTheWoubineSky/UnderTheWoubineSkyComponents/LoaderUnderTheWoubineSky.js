@@ -36,7 +36,7 @@ const LoaderUnderTheWoubineSky = () => {
 
       .trunk,
       .trunk div {
-        background: #EA2118;
+        background: #fff;
         will-change: transform;
         width: 25vmin;
         height: 2.5vmin;

@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import { ContextContainer } from './uTWSSrc/STUnderTheWoubineSky/underTheSkyContext';
-import NavUnderTheWoubineSky from './uTWSSrc/NUnderTheWoubineSky/NavUnderTheWoubineSky';
-import LoaderUnderTheWoubineSky from './uTWSSrc/CUnderTheWoubineSky/LoaderUnderTheWoubineSky';
+import { ContextContainer } from './UnderTheWoubineSky/UnderTheWoubineSkyStore/underTheSkyContext';
+import NavUnderTheWoubineSky from './UnderTheWoubineSky/UnderTheWoubineSkyNavigation/NavUnderTheWoubineSky';
+import LoaderUnderTheWoubineSky from './UnderTheWoubineSky/UnderTheWoubineSkyComponents/LoaderUnderTheWoubineSky';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,13 +10,13 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 5000);
   }, []);
 
   return (
     <NavigationContainer>
       <ContextContainer>
-        {!isLoading ? <NavUnderTheWoubineSky /> : <LoaderUnderTheWoubineSk />}
+        {!isLoading ? <NavUnderTheWoubineSky /> : <LoaderUnderTheWoubineSky />}
       </ContextContainer>
     </NavigationContainer>
   );

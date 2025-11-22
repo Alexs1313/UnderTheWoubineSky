@@ -10,10 +10,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import UnderTheSkyCardDetails from '../CUnderTheWoubineSky/UnderTheSkyCardDetails';
+import UnderTheSkyCardDetails from '../UnderTheWoubineSkyComponents/UnderTheSkyCardDetails';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { achievementsList } from '../DUnderTheWoubineSky/woudbineachvs';
+import { achievementsList } from '../UnderTheWoubineSkyData/woudbineachvs';
 import LinearGradient from 'react-native-linear-gradient';
 
 const VISITED_STORAGE_KEY = '@visited_places';

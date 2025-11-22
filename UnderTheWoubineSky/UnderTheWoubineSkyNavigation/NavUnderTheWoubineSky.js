@@ -1,14 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import DetailsUnderTheWoubineSky from '../SUnderTheWoubineSky/DetailsUnderTheWoubineSky';
-import HomeUnderTheWoubineSky from '../SUnderTheWoubineSky/HomeUnderTheWoubineSky';
-import InfoUnderTheWoubineSky from '../SUnderTheWoubineSky/InfoUnderTheWoubineSky';
-import LocationsListUnderTheWoubineSky from '../SUnderTheWoubineSky/LocationsListUnderTheWoubineSky';
-import MapUnderTheWoubineSky from '../SUnderTheWoubineSky/MapUnderTheWoubineSky';
-import MarksUnderTheWoubineSky from '../SUnderTheWoubineSky/MarksUnderTheWoubineSky';
-import WelcomeUnderTheWoubineSky from '../SUnderTheWoubineSky/WelcomeUnderTheWoubineSky';
-import ProfileUnderTheWoubineSky from '../SUnderTheWoubineSky/ProfileUnderTheWoubineSky';
-import PopularUnderTheWoubineSky from '../SUnderTheWoubineSky/PopularUnderTheWoubineSky';
-import SavedUnderTheWoubineSky from '../SUnderTheWoubineSky/SavedUnderTheWoubineSky';
+import DetailsUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/DetailsUnderTheWoubineSky';
+import HomeUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/HomeUnderTheWoubineSky';
+import InfoUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/InfoUnderTheWoubineSky';
+import LocationsListUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/LocationsListUnderTheWoubineSky';
+import MapUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/MapUnderTheWoubineSky';
+import MarksUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/MarksUnderTheWoubineSky';
+import WelcomeUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/WelcomeUnderTheWoubineSky';
+import ProfileUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/ProfileUnderTheWoubineSky';
+import PopularUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/PopularUnderTheWoubineSky';
+import SavedUnderTheWoubineSky from '../UnderTheWoubineSkyScreens/SavedUnderTheWoubineSky';
 const Stack = createStackNavigator();
 
 const NavUnderTheWoubineSky = () => {

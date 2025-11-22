@@ -15,7 +15,7 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { woudbinefcts } from '../DUnderTheWoubineSky/woudbinefcts';
+import { woudbinefcts } from '../UnderTheWoubineSkyData/woudbinefcts';
 import { BlurView } from '@react-native-community/blur';
 
 const { height } = Dimensions.get('window');

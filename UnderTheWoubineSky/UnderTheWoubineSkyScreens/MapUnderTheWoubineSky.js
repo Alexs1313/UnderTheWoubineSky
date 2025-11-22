@@ -10,10 +10,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { woudbinelocs } from '../DUnderTheWoubineSky/woudbinelocs';
-import Woudbinelistcard from '../CUnderTheWoubineSky/UnderTheSkyListCard';
+import { woudbinelocs } from '../UnderTheWoubineSkyData/woudbinelocs';
+import Woudbinelistcard from '../UnderTheWoubineSkyComponents/UnderTheSkyListCard';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import { useStore } from '../STUnderTheWoubineSky/underTheSkyContext';
+import { useStore } from '../UnderTheWoubineSkyStore/underTheSkyContext';
 import MapView, { Marker } from 'react-native-maps';
 import LinearGradient from 'react-native-linear-gradient';
 const { height } = Dimensions.get('window');

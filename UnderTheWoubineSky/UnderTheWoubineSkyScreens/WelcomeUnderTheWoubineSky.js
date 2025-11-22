@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import {
   Animated,
-  Easing,
   Image,
   ImageBackground,
   Platform,
@@ -16,44 +15,6 @@ import {
 const WelcomeUnderTheWoubineSky = () => {
   const [currWoudbineIdx, setCurrWoudbineIdx] = React.useState(0);
   const navigation = useNavigation();
-  const topAnim = useRef(new Animated.Value(-100)).current;
-  const topScale = useRef(new Animated.Value(0.7)).current;
-  const leftAnim = useRef(new Animated.Value(-300)).current;
-  const rightAnim = useRef(new Animated.Value(300)).current;
-
-  useEffect(() => {
-    topAnim.setValue(-200);
-    topScale.setValue(0.7);
-    leftAnim.setValue(-300);
-    rightAnim.setValue(300);
-
-    Animated.parallel([
-      Animated.timing(topAnim, {
-        toValue: 0,
-        duration: 1800,
-        easing: Easing.out(Easing.exp),
-        useNativeDriver: true,
-      }),
-      Animated.timing(topScale, {
-        toValue: 1,
-        duration: 1800,
-        easing: Easing.out(Easing.exp),
-        useNativeDriver: true,
-      }),
-      Animated.timing(leftAnim, {
-        toValue: 0,
-        duration: 1200,
-        easing: Easing.out(Easing.cubic),
-        useNativeDriver: true,
-      }),
-      Animated.timing(rightAnim, {
-        toValue: 0,
-        duration: 1200,
-        easing: Easing.out(Easing.cubic),
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }, [currWoudbineIdx]);
 
   return (
     <ImageBackground
@@ -69,14 +30,7 @@ const WelcomeUnderTheWoubineSky = () => {
           paddingBottom: 20,
         }}
       >
-        <Animated.View
-          style={[
-            styles.box,
-            {
-              transform: [{ translateY: topAnim }, { scale: topScale }],
-            },
-          ]}
-        >
+        <View style={[styles.box]}>
           {currWoudbineIdx === 0 ? (
             <Image
               source={require('../../assets/images/woudbineonim1.png')}
@@ -103,16 +57,9 @@ const WelcomeUnderTheWoubineSky = () => {
               />
             </View>
           )}
-        </Animated.View>
+        </View>
 
-        <Animated.View
-          style={[
-            styles.box,
-            {
-              transform: [{ translateX: leftAnim }],
-            },
-          ]}
-        >
+        <View style={[styles.box]}>
           <View style={styles.woudbinewlccont}>
             <Text style={styles.woudbinelbltxt}>
               {currWoudbineIdx === 0
@@ -131,15 +78,8 @@ const WelcomeUnderTheWoubineSky = () => {
                 : 'In our journey, you will collect memories - imprints of places in the form of stamps that will remain only in your collection. Each journey is your own trace under the Star sky.'}
             </Text>
           </View>
-        </Animated.View>
-        <Animated.View
-          style={[
-            styles.box,
-            {
-              transform: [{ translateX: rightAnim }],
-            },
-          ]}
-        >
+        </View>
+        <Animated.View style={[styles.box]}>
           <TouchableOpacity
             activeOpacity={0.8}
             onPress={() => {
