@@ -8,9 +8,9 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: om.UnderTheSky
+        bundle_identifier: com.UnderTheSky
       vars:
-        BUNDLE_ID: om.UnderTheSky
+        BUNDLE_ID: com.UnderTheSky
         XCODE_WORKSPACE: UnderTheWoudbineSky.xcworkspace
         XCODE_SCHEME: UnderTheWoudbineSky
         APP_STORE_APPLE_ID: 6755629487
