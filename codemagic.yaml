@@ -8,12 +8,12 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.UnderTheWoubineSky
+        bundle_identifier: om.UnderTheSky
       vars:
-        BUNDLE_ID: com.UnderTheWoubineSky
+        BUNDLE_ID: om.UnderTheSky
         XCODE_WORKSPACE: UnderTheWoudbineSky.xcworkspace
         XCODE_SCHEME: UnderTheWoudbineSky
-        APP_STORE_APPLE_ID: 6753717061
+        APP_STORE_APPLE_ID: 6755629487
     scripts:
       - name: Install npm dependencies
         script: |
